@@ -1,7 +1,7 @@
 import MODULE_ID from './config'
 
 const _ = (action) => MODULE_ID + '_' + action
-
+// eslint-disable-next-line 
 export default {
   RESET: _('RESET'),
   ADD_BUSY_STACK: _('ADD_BUSY_STACK'),
