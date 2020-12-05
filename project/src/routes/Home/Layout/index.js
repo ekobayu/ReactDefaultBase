@@ -3,11 +3,11 @@ import Component from './component'
 import { selectors, actions } from '../../redux'
 
 const mapStateToProps = (state) => ({
-  dataRaw: selectors.getStocbitMovieData(state)
+  dataRaw: selectors.getData(state)
 })
 
 const mapDispatchToProps = {
-  fetchDataRaw: actions.fetchStockbitMovie
+  fetchRawData: actions.fetchRawData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component)

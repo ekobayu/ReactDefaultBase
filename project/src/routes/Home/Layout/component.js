@@ -13,11 +13,11 @@ export default class Layout extends Component {
   }
 
   async componentDidMount () {
-    const { fetchDataRaw } = this.props
+    const { fetchRawData } = this.props
     this.setState({
       loaded: true
     })
-    fetchDataRaw()
+    fetchRawData()
   }
 
   render () {
@@ -41,5 +41,5 @@ export default class Layout extends Component {
 
 Layout.propTypes = {
   dataRaw: PropTypes.any,
-  fetchDataRaw: PropTypes.func
+  fetchRawData: PropTypes.func
 }

@@ -8,12 +8,12 @@ export const getCurrentPath = (state) => state.router.location.pathname
 export const getBusyStack = (state) => getState(state).busyStack
 export const getErrorPage = (state) => getState(state).errorPage
 export const getActivePage = (state) => getState(state).activePage
-export const getStocbitMovies = (state) => getState(state).raw_stocbitMovies
+export const getRawData = (state) => getState(state).rawData
 
-export const getStocbitMovieData = createSelector(
-  getStocbitMovies,
-  (stocbit) => {
-    return stocbit
+export const getData = createSelector(
+  getRawData,
+  (data) => {
+    return data
   }
 )
 

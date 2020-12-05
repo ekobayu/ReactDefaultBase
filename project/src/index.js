@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import store from '../src/routes/reduxStore/store'
 import * as serviceWorker from './serviceWorker'
 import App from './App'
+import './index.scss'
 
 const target = document.querySelector('#root')
 

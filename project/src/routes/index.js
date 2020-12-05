@@ -17,9 +17,9 @@ const Routes = () => {
     <Container fluid className="app-project full-height">
       <Router history={history}>
         <Switch>
-          <Route path={`/app/stockbit-movies/home/`} component={Home} />
-          <Route path={`/app/stockbit-movies/detail/`} component={Detail} />
-          <Route component={() => <Redirect to={'/app/stockbit-movies/home'} />} />
+          <Route path={`/app/project/home/`} component={Home} />
+          <Route path={`/app/project/detail/`} component={Detail} />
+          <Route component={() => <Redirect to={'/app/project/home'} />} />
         </Switch>
       </Router>
     </Container>

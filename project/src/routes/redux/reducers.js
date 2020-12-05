@@ -3,7 +3,7 @@ import types from './types'
 const initialState = {
   errorPage: null,
   busyStack: [],
-  raw_stocbitMovies: []
+  rawData: []
 }
 
 const ACTION_HANDLERS = {
