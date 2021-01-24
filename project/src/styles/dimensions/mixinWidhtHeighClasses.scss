@@ -1,0 +1,45 @@
+@import "../variables/units.scss";
+@import "../dimensions/mixinBase.scss";
+
+/*
+* please @include mixins below on the other file.
+* dont @include mixin below on this file.
+*/
+@mixin sizeWidth {
+  .width-extra-tiny {
+    @include minMaxWidth($extraTinyWidth);
+  }
+  .width-tiny {
+    @include minMaxWidth($tinyWidth);
+  }
+  .width-small {
+    @include minMaxWidth($smallWidth);
+  }
+  .width-medium {
+    @include minMaxWidth($mediumWidth);
+  }
+  .width-large {
+    @include minMaxWidth($largeWidth);
+  }
+  .width-extra-large {
+    @include minMaxWidth($extraLargeWidth);
+  }
+  .width-extra-x-large {
+    @include minMaxWidth($extraXLarge);
+  }
+  .width-extra-xx-large {
+    @include minMaxWidth($extraXXLarge);
+  }
+}
+
+@mixin sizeHeight {
+  .height-32px {
+    @include minMaxHeight($tinyHeight);
+    height: 32px !important;
+  }
+  .height-38px {
+    @include minMaxHeight($tinyHeight);
+    height: 38px !important;
+  }
+}
+/* end of mixin */

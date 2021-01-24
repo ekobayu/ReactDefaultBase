@@ -1,0 +1,102 @@
+@import "../variables/units.scss";
+@import "../dimensions/mixinBase.scss";
+@import "../components/defaultStyle.scss";
+@import "../variables/colors.scss";
+
+%error-info{
+  @extend %font-size-14px;
+  color: $color-red !important;
+}
+%base-input {
+  border-radius: $borderRadius;
+  min-height: $smallHeight !important;
+  max-height: $smallHeight !important;
+}
+
+%base-icon-input {
+  i.search.icon,
+  .search.icon{
+    @include borderStyleCustomColor($color-semi-light-dark-variant-11, 'no');
+    @extend %base-background-color-semi-light-dark-variant-1;
+    font-size: 14px !important
+  }
+  .ui.icon.button,
+  .ui.basic.icon.button{
+    @include borderStyleCustomColor($color-semi-light-dark-variant-11, 'no');
+    @extend %base-background-color-semi-light-dark-variant-1;
+    i.search.icon,
+    .search.icon{
+      font-size: 14px !important
+    }
+  }
+}
+
+*:not(.dropdown) {
+  input{
+    border-color: $color-border-input;
+    color: $color-soft-dark;
+    @extend %base-input;
+    &:focus{
+      border-color: $color-border-input !important;
+    }
+    &.border-primary {
+      border-color: $color-primary;
+      &:focus{
+        border-color: $color-primary !important;
+      }
+      color: $color-darken;
+      @extend %base-input;
+    }
+    &.error-state {
+      border-color: $color-border-input-error !important;
+
+      &+.error-info {
+        @extend %error-info;
+      }
+    }
+  }
+}
+.input:not(.dropdown) {
+  input:focus {
+    @extend %base-color-soft-dark;
+  }
+  @extend %base-input;
+  @extend %base-icon-input;
+}
+.error-info {
+  @extend %error-info;
+}
+.ui.fluid.search:not(.dropdown),
+.ui.search:not(.dropdown){
+  input{
+    &:focus {
+      @extend %base-color-darken;
+    }
+    @include borderStyleCustomColor($color-semi-light-dark-variant-11, 'no');
+  }
+  .results.transition.visible {
+    margin-top: 0 !important;
+    border-top-right-radius: unset;
+    border-top-left-radius: unset;
+    font-weight: normal;
+    .message.empty ,
+    .result{
+      .header,
+      .title {
+        @extend %base-color-darken;
+        font-weight: normal;
+      }
+    }
+    @include borderStyleCustomColor($color-semi-light-dark-variant-11, 'no');
+  }
+}
+.ui.icon.input>i.icon {
+  opacity: 1 !important;
+}
+
+.ui.active.search.dropdown {
+  input.search:focus+.text,
+  input {
+    @extend %base-color-white;
+  }
+}

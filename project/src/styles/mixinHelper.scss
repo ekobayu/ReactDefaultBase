@@ -1,0 +1,29 @@
+$counter: 100;
+
+@mixin min-max-height-x {
+  @for $i from 1 through $counter {
+    .min-height-#{$i} {
+      min-height: #{$i}vh;
+    }
+    .max-height-#{$i} {
+      max-height: #{$i}vh;
+    }
+  }
+}
+
+@mixin min-max-width-x {
+  @for $i from 1 through $counter {
+    .min-width-#{$i} {
+      min-width: #{$i}rem !important;
+      &-half {
+        min-width: #{$i + 0.5}rem !important;
+      }
+      &-75 {
+        min-width: #{$i + 0.75}rem !important;
+      }
+    }
+  }
+}
+
+@include min-max-height-x
+@include min-max-width-x

@@ -1,0 +1,17 @@
+@import "../variables/colors.scss";
+@import "../variables/units.scss";
+@import "../dimensions/mixinBase.scss";
+.modal{
+  .header {
+    i {
+      margin-right: 10px !important;
+    }
+    background-color: $color-darken-variant-1 !important;
+    @extend %font-size-14px;
+    font-weight: normal !important;
+    color: $color-white !important;
+  }
+  .content {
+    padding: $paddingModal !important;
+  }
+}

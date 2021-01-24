@@ -1,0 +1,32 @@
+@import "../variables/units.scss";
+@import "../variables/colors.scss";
+%border-style {
+  -webkit-border-radius: $borderRadius !important;
+  -moz-border-radius: $borderRadius !important;
+  border-radius: $borderRadius !important;
+  border: 1px solid $color-semi-light-dark-variant-11 !important;
+}
+@mixin borderStyleCustomColor($color: $color-semi-light-dark-variant-11, $withBorderRadius: 'yes') {
+  @if($withBorderRadius == 'yes' ) {
+    -webkit-border-radius: $borderRadius !important;
+    -moz-border-radius: $borderRadius !important;
+    border-radius: $borderRadius !important;
+  }
+  border: 1px solid $color !important;
+}
+
+%title-content-padding {
+  padding-top: $size24 !important;
+  padding-bottom: $size24 !important;
+}
+
+%sub-title-content-padding {
+  padding-top: $size0 !important;
+  margin-bottom: $size0 !important;
+  padding-bottom: $size8 !important;
+}
+
+%field-padding {
+  padding-top: $size0 !important;
+  padding-bottom: $size16 !important;
+}

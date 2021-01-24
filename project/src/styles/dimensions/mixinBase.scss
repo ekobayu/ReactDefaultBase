@@ -1,0 +1,47 @@
+@import "../variables/units.scss";
+$counter: 100;
+
+/*
+* 10-mei-19
+* font size
+* use mixin so we can extend below styles
+*/
+@mixin fonSizeGeneratorBase {
+  @each $size in $sizes {
+    %font-size-#{$size} {
+      font-size: $size !important;
+    }
+  }
+}
+// end of font size
+
+/*
+* width and height helper
+*/
+@mixin minWidth($width) {
+  max-width: $width !important;
+}
+
+@mixin maxWidth($width) {
+  max-width: $width !important;
+}
+
+@mixin minMaxWidth($width) {
+  max-width: $width !important;
+  min-width: $width !important;
+}
+
+@mixin minHeight($height) {
+  max-width: $height !important;
+}
+
+@mixin maxHeight($height) {
+  max-height: $height !important;
+}
+
+@mixin minMaxHeight($height) {
+  max-height: $height !important;
+  min-height: $height !important;
+}
+
+@include fonSizeGeneratorBase;

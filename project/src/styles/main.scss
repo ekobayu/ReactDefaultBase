@@ -1,0 +1,38 @@
+@import '~semantic-ui-css/semantic.min.css';
+@import './variables/units.scss';
+@import '~react-day-picker/lib/style.css';
+@import 'base.scss';
+
+.header{
+    &.item {
+        .header {
+            font-weight: 300;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}
+.base-content {
+    padding-top: $size24 + $heightTopBar !important;
+    padding-left: $size82 !important;
+    padding-right: $size82 !important;
+}
+
+@media only screen and (max-width: 1025px) {
+    .base-content {
+        padding-left: $size16 !important;
+        padding-right: $size16 !important;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1361px) {
+    .base-content {
+        padding-left: $size42 !important;
+        padding-right: $size42 !important;
+    }
+}
+@media only screen and (min-width: 1361px) and (max-width: 1371px) {
+    .base-content {
+        padding-left: $size45 !important;
+        padding-right: $size45 !important;
+    }
+}

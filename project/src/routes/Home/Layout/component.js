@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Container } from 'semantic-ui-react';
+import { Grid, Container, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types'
 import './style.scss'
 
@@ -30,6 +30,7 @@ export default class Layout extends Component {
             dataRaw.map(item => (
               <Grid.Column key={item.id}>
                 {item.Title}
+                <Image src={item.Poster} size='small' />
               </Grid.Column>
             ))
           }

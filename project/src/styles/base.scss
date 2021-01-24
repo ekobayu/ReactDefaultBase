@@ -1,0 +1,502 @@
+/*
+Application Settings Go Here
+------------------------------------
+This file acts as a bundler for all variables/mixins/themes, so they
+can easily be swapped out without `core.scss` ever having to know.
+For example:
+@import './variables/colors';
+@import './variables/components';
+@import './themes/default';
+*/
+
+@import 'mixinHelper.scss';
+@import 'components/defaultStyle.scss';
+@import 'components/button.scss';
+@import 'components/menu.scss';
+@import 'variables/units.scss';
+@import 'variables/colors.scss';
+@import 'components/dropdown.scss';
+@import 'components/filters.scss';
+@import 'components/tables.scss';
+@import 'components/input.scss';
+@import 'components/modal.scss';
+@import 'dimensions/mixinClasses.scss';
+@import 'fonts.scss';
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  background-color: $color-semi-light-dark-variant-6;
+}
+.app-project {
+  padding-top: $headerHeight + 24px;
+  padding-left: $paddingOuterDefault;
+  padding-right: $paddingOuterDefault;
+  background: $color-semi-light-dark-variant-6;
+}
+.purple {
+  color: $color-primary !important;
+}
+.purple-sampling {
+  color: $color-primary-variant-7 !important;
+}
+.purple-base {
+  color: $color-primary !important;
+}
+.background-purple-base {
+  background-color: $color-primary !important;
+}
+.background-transparent {
+  background-color: transparent !important;
+}
+.background-dark {
+  background-color: $color-semi-light-dark-variant-1 !important;
+}
+.full-height {
+  height: 100%;
+}
+.box-shadow {
+  -webkit-box-shadow: 0 10px 15px 0 rgba(109, 109, 109, 0.1);
+  -moz-box-shadow: 0 10px 15px 0 rgba(109, 109, 109, 0.1);
+  box-shadow: 0 10px 15px 0 rgba(109, 109, 109, 0.1);
+  &-none {
+    -webkit-box-shadow: unset !important;
+    -moz-box-shadow: unset !important;
+    box-shadow: unset !important;
+  }
+}
+.border {
+  &-radius {
+    border-radius: $borderRadius !important;
+    &-none {
+      border-radius: 0 !important;
+      input {
+        border-radius: 0 !important;
+      }
+    }
+  }
+  &-bottom-soft {
+    border-bottom: 1px $color-semi-light-dark-variant-11 solid !important;
+  }
+  &-filter-date {
+    @include borderStyleCustomColor;
+    margin-top: -1px !important;
+    box-shadow: 0 5px 10px 0 rgba(109, 109, 109, 0.1) !important;
+  }
+  &-default {
+    @include borderStyleCustomColor;
+  }
+}
+.background-container-theme {
+  background-color: $color-white !important;
+}
+.flexed {
+  display: flex !important;
+  flex-grow: 1 !important;
+
+  &.flex-vertical {
+    flex-direction: column;
+  }
+  &.flex-horizontal {
+    flex-direction: row;
+  }
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+  &.justify-content-center {
+    justify-content: center;
+  }
+  &.justify-content-space-between {
+    justify-content: space-between;
+  }
+  &.justify-content-space-around {
+    justify-content: space-around;
+  }
+  &.justify-content-end {
+    justify-content: flex-end;
+  }
+  &.align-items-start {
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+  &.align-items-center {
+    align-items: center;
+    -webkit-align-items: center;
+  }
+  &.align-items-end {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+  }
+  &.align-content-center {
+    align-content: center;
+    -webkit-align-content: center;
+  }
+  &.align-self-center {
+    align-self: center;
+    -webkit-align-self: center;
+  }
+}
+.no {
+  &-shadow {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  &-border {
+    border: none !important;
+    &-radius-right {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    &-radius-left {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}
+
+.flexed {
+  display: flex !important;
+  flex-grow: 1 !important;
+
+  &.flex-vertical {
+    flex-direction: column;
+  }
+
+  &.flex-horizontal {
+    flex-direction: row;
+  }
+}
+
+.p-card {
+  padding-top: 24px !important;
+  padding-bottom: 0 !important;
+  &:first-child {
+    padding-top: 0px !important;
+  }
+}
+
+.p-card-last-child {
+  padding-top: 16px !important;
+}
+
+.container-chart {
+  > div {
+    flex-grow: 1 !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  > div:not(.skip-me) {
+    display: flex !important;
+  }
+}
+.dropdown-campaign-container {
+  width: 20rem !important;
+}
+.ui.page.modals.dimmer.active {
+  background-color: rgba(43, 43, 43, 0.8) !important;
+}
+
+.button-positive {
+  border-radius: 4px !important;
+  box-shadow: 0 10px 15px 0 rgba(118, 118, 118, 0.1) !important;
+  background-color: $color-positive !important;
+}
+.button-white {
+  border-radius: 4px !important;
+  box-shadow: 0 10px 15px 0 rgba(118, 118, 118, 0.1) !important;
+  background-color: $color-white !important;
+}
+
+.scrollable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px;
+  overflow: auto;
+  background:
+  /* Shadow covers */ linear-gradient(
+      $color-white 50%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(rgba(109, 109, 109, 1), $color-white 70%) 0 100%,
+    /* Shadows */
+      radial-gradient(
+        farthest-side at 40% 0,
+        rgba(109, 109, 109, 1),
+        rgba(109, 109, 109, 1)
+      ),
+    radial-gradient(
+        farthest-side at 40% 100%,
+        rgba(109, 109, 109, 1),
+        rgba(109, 109, 109, 1)
+      )
+      0 100%;
+  background:
+  /* Shadow covers */ linear-gradient(
+      $color-white 50%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(rgba(255, 255, 255, 0), $color-white 70%) 0 100%,
+    /* Shadows */
+      radial-gradient(
+        farthest-side at 50% 0,
+        rgba(109, 109, 109, 0.4),
+        rgba(0, 0, 0, 0)
+      ),
+    radial-gradient(
+        farthest-side at 50% 100%,
+        rgba(109, 109, 109, 0.4),
+        rgba(0, 0, 0, 0)
+      )
+      0 100%;
+  background-repeat: no-repeat;
+  background-color: $color-white;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+}
+.ui.dropdown .menu.visible.transition::-webkit-scrollbar,
+.scrollbar-custom::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+}
+.ui.dropdown .menu.visible.transition::-webkit-scrollbar-thumb,
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: $color-primary-variant-8;
+}
+.semi-bold {
+  font-weight: 600;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis !important;
+  text-overflow: ellipsis !important;
+}
+.label-with-border {
+  height: $size22;
+  padding-left: $size10;
+  border-left: $size2 solid $color-positive-variant-3;
+}
+.popup-global {
+  padding: 8px 15px 8px 15px !important;
+  height: 38px;
+  color: $color-darken !important;
+  box-shadow: 0 0 5px 0 rgba(109, 109, 109, 0.2) !important;
+}
+.retargeting-wrapper {
+  label:hover,
+  span:hover,
+  div:hover,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.daypicker-calendar {
+  max-width: 240px;
+  position: relative;
+  .DayPickerInput {
+    display: block !important;
+    width: 100%;
+    max-width: 240px;
+    position: relative;
+    input {
+      width: 100%;
+      background: $color-white;
+      border: none;
+      padding: 10px;
+      &.inputDate {
+        border: solid 1px $color-semi-light-dark-variant-11 !important;
+        margin: 0;
+        width: 100%;
+        -webkit-flex: 1 0 auto;
+        flex: 1 0 auto;
+        outline: 0;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        text-align: left;
+        line-height: 1.21428571em;
+        padding: 0.67857143em 1em;
+        padding-right: 1em;
+        border-radius: 0.28571429rem;
+        -webkit-transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+        -webkit-transition: box-shadow 0.1s ease, border-color 0.1s ease;
+        transition: box-shadow 0.1s ease, border-color 0.1s ease;
+        &[disabled] {
+          opacity: 0.4;
+        }
+      }
+    }
+    &.disabled::after {
+      opacity: 0.4;
+    }
+    .calendar {
+      border-left: 1px solid $color-semi-light-dark-variant-11;
+    }
+    .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+      background-color: $color-primary;
+    }
+    .DayPickerInput-Overlay {
+      top: -38px;
+      width: 316px;
+      border-radius: 4px !important;
+      box-shadow: 0 5px 10px 0 rgba(109, 109, 109, 0.1);
+      border: solid 1px $color-semi-light-dark-variant-11;
+      .DayPicker {
+        font-size: 14px;
+        color: $color-darken !important;
+        width: 316px;
+        .DayPicker-NavButton--prev {
+          background-image: url(../images/chevron-left-solid.svg);
+        }
+        .DayPicker-NavButton--next {
+          background-image: url(../images/chevron-right-solid.svg);
+        }
+        .DayPicker-Month {
+          width: 300px;
+          .DayPicker-Caption {
+            margin-bottom: 25px;
+            padding: 0 0.7em;
+            > div {
+              font-weight: 600;
+            }
+          }
+          .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+            background-color: $color-primary !important;
+          }
+          .DayPicker-Day {
+            padding: 0.8em !important;
+            font-weight: 400;
+            &:hover {
+              background-color: $color-primary-variant-2;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn-icon-calendar {
+    position: absolute;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid $color-semi-light-dark-variant-11;
+    background: $color-semi-light-dark-variant-1;
+    text-align: center;
+    vertical-align: middle;
+    height: 38px;
+    width: 38px;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+    padding: 10px !important;
+    display: block;
+    font-size: 14px;
+    color: $color-darken-variant-2;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-soft-dark-variant-1;
+    }
+  }
+}
+
+.default-segment {
+  padding: 16px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 5px 10px 0 rgba(109, 109, 109, 0.1) !important;
+  border: solid 1px $color-semi-light-dark-variant-11 !important;
+  background-color: $color-white;
+  .newstyle-label {
+    color: $color-dark !important;
+    font-size: 12px !important;
+    text-transform: capitalize;
+    display: block;
+    @extend %sub-title-content-padding;
+  }
+
+  .newstyle-value {
+    color: $color-darken !important;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.default-base-table {
+  border: solid 1px $color-semi-light-dark-variant-11 !important;
+  thead {
+    th {
+      font-weight: normal !important;
+      color: $color-darken-variant-5 !important;
+      padding: 16px !important;
+      border-bottom: 1px solid $color-semi-light-dark-variant-11 !important;
+      .title-column {
+        display: inline;
+        margin-right: 5px;
+        &.sorted {
+          color: $color-primary;
+        }
+      }
+      .icon {
+        color: $color-darken-variant-2 !important;
+      }
+    }
+  }
+  tbody {
+    td {
+      color: $color-darken;
+      padding: 16px !important;
+      a {
+        color: $color-darken !important;
+        padding: 16px;
+        display: block;
+      }
+      .header {
+        font-family: 'Open Sans', sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 400;
+        color: $color-darken;
+        .sub.header {
+          font-family: 'Open Sans', sans-serif !important;
+          font-size: 0.857rem !important;
+          margin-top: 8px;
+          color: $color-darken !important;
+          span {
+            color: $color-dark !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-preview-summary {
+  box-shadow: 0 10px 15px 0 rgba(109, 109, 109, 0.1) !important;
+  .close.icon {
+    font-size: 14px;
+    color: $color-darken-variant-2 !important;
+    background: $color-white;
+    border-radius: 18px;
+    top: -0.7rem !important;
+    right: -0.7rem !important;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+  }
+  .header {
+    background-color: $color-primary !important;
+    font-size: 14px !important;
+    color: $color-white !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 32px !important;
+    font-weight: 400 !important;
+    i.icon {
+      width: 14px;
+      margin-right: 10px;
+    }
+  }
+  .content {
+    padding: 24px 32px 24px 32px !important;
+  }
+}

@@ -1,0 +1,137 @@
+@import "./units.scss";
+$color-teal: #26bfc4; // teal
+$color-teal-variant-1: #3fc0c8; // teal-variant-1
+$color-teal-variant-2: #00b5ad; // teal-variant-2
+$color-teal-variant-3: #85b7d9; // teal-variant-3
+$color-red: #df2525; // red
+$color-red-variant-1: #a41414; // red-variant-1
+$color-red-variant-2: #d11a1a; // red
+$color-red-variant-3: #d11a1a; // red
+$color-primary: #6044b0; // purple
+$color-primary-variant-1: #7154c3; // purple-variant-1
+$color-primary-variant-2: #f0eaff; // purple-variant-2
+$color-primary-variant-3: #decfff; // purple-variant-3
+$color-primary-variant-4: #866fc4; // purple-variant-4
+$color-primary-variant-5: #846dc3; // purple-variant-5
+$color-primary-variant-6: #6a4cbe; // purple-variant-6
+$color-primary-variant-7: #6d53b6; // purple-variant-7
+$color-primary-variant-8: #7357be; // purple-variant-8
+$color-positive: #3a9f3d; // green
+$color-positive-variant-1: #04a909; // green
+$color-positive-variant-2: #009688; // green
+$color-positive-variant-3: #74d9db; // green
+$color-positive-variant-4: #3cac3f; // green
+$color-white: #ffffff; // white
+$color-semi-white: #e0e0e0; // semi-white
+$color-semi-white-variant-1: #f5f5f5; // semi-white
+$color-tertiary: #1a1a1a;
+$color-tertiary-variant-1: #dadada;
+$color-darken: #3c3c3c; // darken
+$color-darken-variant-1: #7b7b7b; // darken-variant-1
+$color-darken-variant-2: #737272; // darken-variant-2
+$color-darken-variant-3: #aaaaaa; // darken-variant-3
+$color-darken-variant-4: #6D6D6D; // darken-variant-4
+$color-darken-variant-5: #0c0c0c; // darken-variant-5
+$color-darken-variant-6: #afafaf; // darken-variant-6
+$color-dark: #999999; // dark
+$color-soft-dark: #9e9e9e; // soft-dark
+$color-soft-dark-variant-1: #f2f2f2; // soft-dark-variant-1
+$color-semi-light-dark: #e0e1e2; // semi-light-dark
+$color-semi-light-dark-variant-1: #efefef; // semi-light-dark-variant-1
+$color-semi-light-dark-variant-2: #f7f7f7; // semi-light-dark-variant-2
+$color-semi-light-dark-variant-3: #e2e2e2; // semi-light-dark-variant-3
+$color-semi-light-dark-variant-4: #e3e3e3; // semi-light-dark-variant-4
+$color-semi-light-dark-variant-5: #fafafa; // semi-light-dark-variant-5
+$color-semi-light-dark-variant-6: #f8f8f8; // semi-light-dark-variant-6
+$color-semi-light-dark-variant-7: #e1e1e1; // semi-light-dark-variant-7
+$color-semi-light-dark-variant-8: #a9a9a9; // semi-light-dark-variant-8
+$color-semi-light-dark-variant-9: #eeeeee; // semi-light-dark-variant-9
+$color-semi-light-dark-variant-10: #bababa; // semi-light-dark-variant-10
+$color-semi-light-dark-variant-11: #e6e6e6; // semi-light-dark-variant-11
+$color-light-dark: #f3f3f3; // light-dark
+
+$color-border-dropdown: #e6e6e6;
+$color-border-input: $color-semi-white;
+$color-border-input-error: $color-red;
+
+$color-box-shadow: $color-soft-dark-variant-1;
+
+$background-color-hover-sidebar: $color-primary-variant-2;
+$color-hover-sidebar: $color-primary-variant-4;
+$background-color-selected-sidebar: $color-primary-variant-3;
+$color-selected-sidebar: $color-primary;
+
+$color-tab-background: #f2f2f2;
+$color-tab-font: #bbbbbb;
+
+$colors: (
+  'teal': $color-teal,
+  'teal-variant-1': $color-teal-variant-1,
+  'teal-variant-2': $color-teal-variant-2,
+  'teal-variant-3': $color-teal-variant-3,
+  'red': $color-red,
+  'red-variant-1': $color-red-variant-1,
+  'red-variant-2': $color-red-variant-2,
+  'primary': $color-primary,
+  'primary-variant-1': $color-primary-variant-1,
+  'primary-variant-2': $color-primary-variant-2,
+  'primary-variant-3': $color-primary-variant-3,
+  'primary-variant-4': $color-primary-variant-4,
+  'primary-variant-5': $color-primary-variant-5,
+  'primary-variant-6': $color-primary-variant-6,
+  'primary-variant-7': $color-primary-variant-7,
+  'primary-variant-8': $color-primary-variant-8,
+  'positive': $color-positive,
+  'positive-variant-1': $color-positive-variant-1,
+  'positive-variant-2': $color-positive-variant-2,
+  'positive-variant-3': $color-positive-variant-3,
+  'positive-variant-4': $color-positive-variant-4,
+  'white': $color-white,
+  'semi-white': $color-semi-white,
+  'semi-white-variant-1': $color-semi-white-variant-1,
+  'tertiary': $color-tertiary,
+  'tertiary-variant-1': $color-tertiary-variant-1,
+  'darken': $color-darken,
+  'darken-variant-1': $color-darken-variant-1,
+  'darken-variant-2': $color-darken-variant-2,
+  'darken-variant-3': $color-darken-variant-3,
+  'darken-variant-4': $color-darken-variant-4,
+  'darken-variant-5': $color-darken-variant-5,
+  'darken-variant-6': $color-darken-variant-6,
+  'dark': $color-dark,
+  'soft-dark': $color-soft-dark,
+  'soft-dark-variant-1': $color-soft-dark-variant-1,
+  'semi-light-dark': $color-semi-light-dark,
+  'semi-light-dark-variant-1': $color-semi-light-dark-variant-1,
+  'semi-light-dark-variant-2': $color-semi-light-dark-variant-2,
+  'semi-light-dark-variant-3': $color-semi-light-dark-variant-3,
+  'semi-light-dark-variant-4': $color-semi-light-dark-variant-4,
+  'semi-light-dark-variant-5': $color-semi-light-dark-variant-5,
+  'semi-light-dark-variant-6': $color-semi-light-dark-variant-6,
+  'semi-light-dark-variant-7': $color-semi-light-dark-variant-7,
+  'semi-light-dark-variant-8': $color-semi-light-dark-variant-8,
+  'semi-light-dark-variant-9': $color-semi-light-dark-variant-9, 
+  'semi-light-dark-variant-10': $color-semi-light-dark-variant-10,
+  'semi-light-dark-variant-11': $color-semi-light-dark-variant-11,
+  'light-dark': $color-light-dark
+);
+
+@mixin generateBaseColorAndBackground {
+  @each $name, $colorValue in $colors {
+    //@warn "#{$colorValue} - #{$name}";
+    %base-color-#{$name} {
+      color: $colorValue !important;
+    }
+    %base-background-color-#{$name} {
+      background-color: $colorValue !important;
+    }
+  }
+}
+%border-style {
+  -webkit-border-radius: $borderRadius !important;
+  -moz-border-radius: $borderRadius !important;
+  border-radius: $borderRadius !important;
+  border: 1px solid $color-semi-light-dark-variant-3 !important;
+}
+
+@include generateBaseColorAndBackground;

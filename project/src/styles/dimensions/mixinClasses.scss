@@ -1,0 +1,208 @@
+/*!
+ * Copyright nabilfm (c) 2019
+ */
+
+@import "../variables/units.scss";
+@import "./mixinWidhtHeighClasses.scss";
+$counter: 100;
+
+/*
+* 10-mei-19
+* font size
+* use mixin so we can extend below classes
+*/
+@mixin fonSizeGeneratorClass {
+  @each $size in $sizes {
+    .font-size-#{$size} {
+      font-size: $size !important;
+    }
+  }
+}
+// end of font size
+
+
+/*
+* 10-mei-19
+* padding and margin
+* use mixin so we can extend below styles
+*
+* how to reset padding?
+* you can use "p-0" it means padding: 0 !important
+* you can use "pt-0" it means padding-top: 0 !important
+* you can use "pb-0" it means padding-bottom: 0 !important
+* you can use "py-0" it means padding-top: 0 !important and padding-bottom !important
+* you can use "pl-0" it means padding-left: 0 !important
+* you can use "pr-0" it means padding-right: 0 !important
+* you can use "px-0" it means padding-right: 0 !important and padding-left !important
+*
+* how to reset margin? just like padding, you can simply replace "p" with "m"
+*
+* how to use padding with REM?
+* you can use "p-2" it means padding: 2rem !important
+* you can use "pt-2" it means padding-top: 2rem !important
+* you can use "pb-2" it means padding-bottom: 2rem !important
+* you can use "py-2" it means padding-top: 2rem !important and padding-bottom !important
+* you can use "pl-2" it means padding-left: 2rem !important
+* you can use "pr-2" it means padding-right: 2rem !important
+* you can use "px-2" it means padding-right: 2rem !important and padding-left !important
+*
+* how to use padding or margin with px? just like padding or margin with rem, you can simply add "px" after class
+* ex: "p-8px" or "pb-20px"
+* available unit [ 4px, 6px, 8px, 10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px, 32px, 45px, 48px, 56px, 82px ]
+*/
+@mixin getItemWithRem($typeStyle, $typeItem, $valueByIndexLoop, $secondTypeItem: null) {
+  @if($typeItem == 'default') {
+    &-#{$valueByIndexLoop} {
+      @if $valueByIndexLoop == 0 {
+        #{$typeStyle}: #{$valueByIndexLoop} !important; /*it will generate something like this -> padding: 1rem !important*/
+      } @else {
+        #{$typeStyle}: #{$valueByIndexLoop}rem !important; /*it will generate something like this -> padding: 1rem !important*/
+      }
+      &-half {
+        #{$typeStyle}: #{$valueByIndexLoop + 0.5}rem !important; /*it will generate something like this -> padding: 1.5rem !important*/
+      }
+    }
+  }
+  @else {
+    &-#{$valueByIndexLoop} {
+      #{$typeStyle}-#{$typeItem}: #{$valueByIndexLoop}rem !important; /*it will generate something like this -> padding-right: 1.5rem !important*/
+      @if $secondTypeItem != null {
+        #{$typeStyle}-#{$secondTypeItem}: #{$valueByIndexLoop}rem !important; /*it will generate something like this -> padding-right: 1.5rem !important*/
+      }
+      &-half {
+        #{$typeStyle}-#{$typeItem}: #{$valueByIndexLoop + 0.5}rem !important; /*it will generate something like this -> padding-right: 1.5rem !important*/
+        @if $secondTypeItem != null {
+          #{$typeStyle}-#{$secondTypeItem}: #{$valueByIndexLoop + 0.5}rem !important; /*it will generate something like this -> padding-right: 1.5rem !important*/
+        }
+      }
+    }
+  }
+}
+@mixin getItemWithPx($typeStyle, $typeItem, $valueByIndexParam, $secondTypeItem: null) {
+  @if($typeItem == 'default') {
+    &-#{$valueByIndexParam} {
+      #{$typeStyle}: #{$valueByIndexParam} !important; /*it will generate something like this -> padding: 1px !important*/
+    }
+  }
+  @else {
+    &-#{$valueByIndexParam} {
+      #{$typeStyle}-#{$typeItem}: #{$valueByIndexParam} !important; /*it will generate something like this -> padding-right: 1.5px !important*/
+      @if $secondTypeItem != null {
+        #{$typeStyle}-#{$secondTypeItem}: #{$valueByIndexParam} !important; /*it will generate something like this -> padding-left: 1.5px !important*/
+      }
+    }
+  }
+}
+
+@mixin paddingMarginWithRem {
+  @for $i from 0 through $counter {
+    .p {
+      @include getItemWithRem('padding','default', $i);
+      &r {
+        @include getItemWithRem('padding','right', $i);
+      }
+      &l {
+        @include getItemWithRem('padding','left', $i);
+      }
+      &t {
+        @include getItemWithRem('padding','top', $i);
+      }
+      &b {
+        @include getItemWithRem('padding','bottom', $i);
+      }
+      &x {
+        @include getItemWithRem('padding', 'left', $i, 'right');
+      }
+      &y {
+        @include getItemWithRem('padding', 'top', $i, 'bottom');
+      }
+    }
+    .m {
+      @include getItemWithRem('margin','default', $i);
+      &r {
+        @include getItemWithRem('margin','right', $i);
+      }
+      &l {
+        @include getItemWithRem('margin','left', $i);
+      }
+      &t {
+        @include getItemWithRem('margin','top', $i);
+      }
+      &b {
+        @include getItemWithRem('margin','bottom', $i);
+      }
+      &x {
+        @include getItemWithRem('margin', 'left', $i, 'right');
+      }
+      &y {
+        @include getItemWithRem('margin', 'top', $i, 'bottom');
+      }
+    }
+  }
+}
+@mixin paddingAndMarginGenerator{
+  @each $size in $sizes {
+    .p {
+      @include getItemWithPx('padding','default', $size);
+      &r {
+        @include getItemWithPx('padding','right', $size);
+      }
+      &l {
+        @include getItemWithPx('padding','left', $size);
+      }
+      &t {
+        @include getItemWithPx('padding','top', $size);
+      }
+      &b {
+        @include getItemWithPx('padding','bottom', $size);
+      }
+      &x {
+        @include getItemWithPx('padding', 'left', $size, 'right');
+      }
+      &y {
+        @include getItemWithPx('padding', 'top', $size, 'bottom');
+      }
+    }
+    .m {
+      @include getItemWithPx('margin','default', $size);
+      &r {
+        @include getItemWithPx('margin','right', $size);
+      }
+      &l {
+        @include getItemWithPx('margin','left', $size);
+      }
+      &t {
+        @include getItemWithPx('margin','top', $size);
+      }
+      &b {
+        @include getItemWithPx('margin','bottom', $size);
+      }
+      &x {
+        @include getItemWithPx('margin', 'left', $size, 'right');
+      }
+      &y {
+        @include getItemWithPx('margin', 'top', $size, 'bottom');
+      }
+    }
+  }
+}
+// end of padding and margin
+
+
+/*
+* helper
+*/
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100% !important;
+}
+// end of helper
+
+@include sizeWidth;
+@include sizeHeight;
+@include fonSizeGeneratorClass;
+@include paddingAndMarginGenerator;
+@include paddingMarginWithRem;

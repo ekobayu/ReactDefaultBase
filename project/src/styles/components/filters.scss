@@ -1,0 +1,66 @@
+@import "../variables/colors.scss";
+@import "../variables/units.scss";
+.filters {
+  .filter-item {
+    .label-input {
+      margin-bottom: 10px;
+      color: $color-darken;
+    }
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+    input {
+      min-width: 180px;
+      max-width: 180px;
+    }
+    .filter-location {
+      padding-left: $size16;
+      @extend %base-color-darken;
+      .menu.transition.visible {
+        .item-custom {
+          padding: 0 !important;
+          .item.inside {
+            padding: $size10 0 $size10 $size16 !important;
+          }
+          .scrollbar-custom {
+            margin: -1em 0em 0em 0 !important;
+          }
+        }
+      }
+      .scrolling {
+        .text {
+          font-weight: 400;
+        }
+      }
+      i.dropdown.icon{
+        top: 0 !important;
+        right: -1px!important;
+      }
+      .inside {
+        i.dropdown.icon {
+          height: auto !important;
+          border: unset !important;
+          background-color: unset !important;
+        }
+      }
+    }
+    @media only screen and (max-width: 1025px) {
+      input {
+        min-width: 130px;
+        max-width: 130px;
+      }
+    }
+  }
+  .ui.disabled.input {
+    &:hover{
+      cursor: pointer;
+    }
+    opacity: 1 !important;
+  }
+  .wrapper-filter-action {
+    padding-top: 24px;
+    .reset-button {
+      margin-left: 16px;
+    }
+  }
+}

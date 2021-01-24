@@ -1,0 +1,224 @@
+@import "../variables/units.scss";
+@import "../variables/colors.scss";
+@import "../components/defaultStyle.scss";
+@import "../dimensions/mixinWidhtHeighClasses.scss";
+
+@mixin buttonHover($color: $color-primary, $bgColor: $color-primary-variant-2) {
+  &:hover {
+    background-color: $bgColor;
+    color: $color;
+  }
+}
+/* end of mixin button */
+
+/* base style for button here */
+%base-button-hover {
+  @include buttonHover;
+}
+
+%base-button {
+  font-family: 'Open Sans', sans-serif !important;
+  border-radius: $borderRadius !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  font-weight: normal !important;
+  min-width: $smallWidth;
+  min-height: $smallHeight !important;
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+  font-size: 14px !important;
+}
+
+%base-button-icon-circle {
+  @extend %base-button;
+  @extend %base-button-hover;
+  color: $color-darken-variant-2;
+  background-color: $color-white;
+  padding: 0 !important;
+  font-size: 12px !important;
+  -webkit-border-radius: 19px !important;
+  -moz-border-radius: 19px !important;
+  border-radius: 19px !important;
+  @include borderStyleCustomColor($color-semi-light-dark-variant-4, 'no');
+  &:hover {
+    background-color: $color-primary-variant-2 !important;
+    color: $color-primary !important;
+  }
+}
+/* end of base style for button*/
+
+.ui.button,
+.ui.basic.button {
+  background-color: unset;
+  &:hover{
+    background-color: unset;
+    color: unset;
+  }
+}
+
+.ui.button.positive,
+.ui.button.button-green,
+.button-green {
+  @extend %base-button;
+  @extend %base-color-white;
+  background-color: $color-positive;
+  &.disabled {
+    @extend %base-background-color-semi-light-dark;
+  }
+  &:hover {
+    background-color: $color-positive-variant-4 !important;
+  }
+}
+
+.ui.button.button-violet,
+.button-violet{
+  @extend %base-button;
+  background-color: $color-primary;
+  @extend %base-color-white;
+  &:hover {
+    background-color: $color-primary-variant-6 !important;
+  }
+}
+
+.ui.button.button-white,
+.button-white{
+  @extend %base-button;
+  background-color: $color-white;
+  @extend %base-color-darken;
+  @include borderStyleCustomColor;
+  &-primary-border {
+    @extend %base-button;
+    background-color: $color-white;
+    @extend %base-color-primary;
+    @include borderStyleCustomColor($color-primary);
+  }
+  &:hover {
+    background-color: $color-semi-white-variant-1 !important;
+  }
+}
+
+.ui.button.button-dark,
+.button-dark{
+  @extend %base-button;
+  background-color: $color-dark;
+  @extend %base-color-white;
+  &:hover {
+    background-color: #afafaf !important;
+  }
+}
+
+.ui.button.button-light-dark,
+.button-light-dark{
+  @extend %base-button;
+  background-color: $color-light-dark;
+  @extend %base-color-soft-dark;
+}
+
+.ui.button.button-icon-circle,
+.button-icon-circle{
+  @extend %base-button-icon-circle;
+}
+
+.ui.button.button-delete,
+.button-delete{
+  @extend %base-button;
+  box-shadow: 0 10px 15px 0 rgba(118, 118, 118, 0.1) !important;
+  color: $color-white !important;
+  background: $color-red !important;
+  &-icon {
+    @extend %base-button-icon-circle;
+    @include minMaxHeight($tinyHeight);
+  }
+}
+
+i.circular,
+.ui.mini.basic.icon.button,
+i.icon.action-button,
+.button.circular.icon:not(.criteria-button),
+.oval-download{
+  @extend %base-button-hover;
+  @extend %base-button-icon-circle;
+  @include minMaxWidth($extraTinyWidth);
+  @include minMaxHeight($tinyHeight);
+}
+
+i.action-button.icon {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+i.close.color-red-variant-1 {
+  color: $color-red-variant-1;
+}
+
+.button-close-modal{
+  &:hover{
+    cursor: pointer;
+  }
+  position: absolute;
+  font-size: 18px;
+  font-weight: 900;
+  right: -.8rem;
+  top: -.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+  width: 32px;
+  height: 32px;
+  background: $color-white;
+  color: $color-darken-variant-2;
+}
+
+/* wave effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .1s, opacity 1s;
+}
+
+.button-white{
+  &.ripple:after {
+    background-image: radial-gradient(circle, $color-white 10%, transparent 10.01%);
+  }
+}
+.button-white-primary-border {
+  &.ripple:after {
+    background-image: radial-gradient(circle, $color-primary 10%, transparent 10.01%);
+  }
+}
+
+.button-violet,
+.button-positive,
+.button-dark,
+.button-light-dark,
+.button-green{
+  &.ripple:after{
+    background-image: radial-gradient(circle, $color-white 10%, transparent 10.01%);
+  }
+}
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}
+/* end of wave effect */

@@ -1,0 +1,88 @@
+$size0: 0px;
+$size2: 2px;
+$size4: 4px;
+$size6: 6px;
+$size8: 8px;
+$size10: 10px;
+$size12: 12px;
+$size14: 14px;
+$size16: 16px;
+$size18: 18px;
+$size20: 20px;
+$size22: 22px;
+$size24: 24px;
+$size32: 32px;
+$size34: 34px;
+$size36: 36px;
+$size48: 48px;
+$size40: 40px;
+$size42: 42px;
+$size45: 45px;
+$size56: 56px;
+$size82: 82px;
+$size200: 200px;
+$size218: 218px;
+$size280: 280px;
+
+$sizes: (
+  $size4,
+  $size6,
+  $size8,
+  $size10,
+  $size12,
+  $size14,
+  $size16,
+  $size18,
+  $size20,
+  $size22,
+  $size24,
+  $size32,
+  $size40,
+  $size42,
+  $size45,
+  $size48,
+  $size56,
+  $size82
+);
+
+$defaultFontSize: $size14;
+
+$heightTopBar: $size56;
+$heightIconDefault: $size32;
+$widthIconDefault: $size32;
+
+$extraTiny: 32px;
+$semiTiny: 38px;
+$tiny: 72px;
+$small: 144px;
+$medium: 160px;
+$large: 180px;
+$extraLarge: 240px;
+$extraXLarge: 320px;
+$extraXXLarge: 344px;
+$extraXXXLarge: 460px;
+$extraXXXXLarge: 480px;
+
+$extraTinyWidth: $extraTiny;
+$semiTinyWidth: $semiTiny;
+$tinyWidth: $tiny;
+$smallWidth: $small;
+$mediumWidth: $medium;
+$largeWidth: $large;
+$extraLargeWidth: $extraLarge;
+
+$tinyHeight: $extraTiny;
+$smallHeight: $semiTiny; // used as default height, change this value carefully
+
+$dropdownSmallWidth: 240px;
+$dropdownLargeWidth: $extraXXLarge;
+
+$borderRadius: 4px;
+
+$paddingModal: 32px;
+$paddingOuterDefault: 82px;
+
+$headerHeight: 56px;
+
+$paddingLeftRightCEContent: $size22;
+$paddingTopCEContent: $size32;

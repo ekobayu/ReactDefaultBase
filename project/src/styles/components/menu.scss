@@ -1,0 +1,55 @@
+/*!
+ * created nabilfm 2019
+ */
+
+@import "../variables/units.scss";
+@import "../variables/colors.scss";
+
+%base-active-menu {
+  &.active {
+    @extend %base-background-color-white;
+    @extend %base-color-darken;
+    border-top: 4px solid $color-primary !important;
+    border-radius: unset;
+    border-bottom: none !important;
+  }
+}
+
+.ui.borderless.item.menu,
+.ui.attached.tabular.menu{
+  border: unset ;
+  -webkit-box-shadow: unset !important;
+  -moz-box-shadow: unset !important;
+  box-shadow: unset !important;
+  .item {
+    border: 1px solid $color-semi-white !important;
+    border-bottom: 1px solid $color-semi-white !important;
+    border-bottom-left-radius: 0 !important;
+    color: $color-tab-font !important;
+    @extend %base-background-color-soft-dark-variant-1;
+    &:first-child {
+      @extend %base-active-menu;
+      &.active{
+        border-top-left-radius: $borderRadius !important;
+        border-right: unset !important;
+      }
+      //border-top-right-radius: $borderRadius !important;
+    }
+    &:not(:first-child):not(:last-child){
+      @extend %base-active-menu;
+    }
+    &:last-child {
+      @extend %base-active-menu;
+      &.active {
+      border-left: unset !important;
+      border-top-right-radius: $borderRadius !important;
+      }
+    }
+  }
+  .active.item ~ .item {
+    //text-transform: uppercase;
+  }
+  + div {
+    border-top: none !important;
+  }
+}
