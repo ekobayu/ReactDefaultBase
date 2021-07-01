@@ -10,15 +10,13 @@ import Home from './Home'
 import Detail from './Detail'
 
 const Routes = () => {
-  // const url = window.location.pathname
-  // const id = url.substring(url.lastIndexOf('/') + 1)
 
   return <>
     <Container fluid className="app-project full-height">
       <Router history={history}>
         <Switch>
           <Route path={`/app/project/home/`} component={Home} />
-          <Route path={`/app/project/detail/`} component={Detail} />
+          <Route path={`/app/project/detail/:id`} component={Detail} />
           <Route component={() => <Redirect to={'/app/project/home'} />} />
         </Switch>
       </Router>
