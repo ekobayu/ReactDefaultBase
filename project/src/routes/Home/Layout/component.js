@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Grid, Container, Image, Card, Link, Button } from 'semantic-ui-react';
+import { Grid, Container, Image, Card, Button } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 import './style.scss'
 
